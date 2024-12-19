@@ -12,5 +12,6 @@
       "@hooks/*": ["src/app/directives/*"],
       "@theme/*": ["src/app/theme/*"]
     }
-  }
+  },
+  "include": ["src"]
 }
