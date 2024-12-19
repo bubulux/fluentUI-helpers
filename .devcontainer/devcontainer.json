@@ -1,0 +1,34 @@
+// https://containers.dev/implementors/json_reference/
+{
+    "build": {
+        "dockerfile": "Dockerfile",
+        "context": ".."
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "esbenp.prettier-vscode",
+                "Bubulus.copilot-inline-toggle",
+                "EditorConfig.EditorConfig",
+                "GitHub.copilot",
+                "GitHub.copilot-chat",
+                "dbaeumer.vscode-eslint",
+                "mgmcdermott.vscode-language-babel",
+                "firsttris.vscode-jest-runner",
+                "vitaliymaz.vscode-svg-previewer",
+                "redhat.vscode-yaml",
+                "naumovs.color-highlight",
+                "kaiwood.center-editor-window",
+                "eamodio.gitlens",
+                "wayou.vscode-todo-highlight",
+                "PKief.material-icon-theme",
+                "yoavbls.pretty-ts-errors"
+            ]
+        }
+    },
+    "runArgs": [
+        "--name",
+        "fluentui-helper-dev-env"
+    ]
+    // "postCreateCommand": "npm install"
+}
