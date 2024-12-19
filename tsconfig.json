@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    // Further linting
+    "strict": true,
+    "noImplicitAny": true,
+    "noFallthroughCasesInSwitch": true,
+    // Aliases
+    "baseUrl": ".",
+    "paths": {
+      "@animations/*": ["src/app/animations/*"],
+      "@components/*": ["src/app/components/*"],
+      "@hooks/*": ["src/app/directives/*"],
+      "@theme/*": ["src/app/theme/*"]
+    }
+  }
+}
