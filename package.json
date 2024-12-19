@@ -12,7 +12,8 @@
     "@fluentui/react-components": "^9.55.0",
     "@fluentui/react-icons": "^2.0.261",
     "@griffel/react": "^1.5.25",
-    "react": "^18.3.1"
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   },
 
   "devDependencies": {

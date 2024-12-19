@@ -29,6 +29,6 @@
     "runArgs": [
         "--name",
         "fluentui-helper-dev-env"
-    ]
-    // "postCreateCommand": "npm install"
+    ],
+    "postCreateCommand": "npm install"
 }
