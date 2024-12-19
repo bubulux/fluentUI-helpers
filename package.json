@@ -12,11 +12,16 @@
     "@fluentui/react-components": "^9.55.0",
     "@fluentui/react-icons": "^2.0.261",
     "@griffel/react": "^1.5.25",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react": "^18 || ^17",
+    "react-dom": "^18 || ^17"
   },
 
   "devDependencies": {
+    "@fluentui/react-components": "^9.55.0",
+    "@fluentui/react-icons": "^2.0.261",
+    "@griffel/react": "^1.5.25",
+    "react": "^18.1.3",
+    "react-dom": "^18.1.3",
     "@babel/preset-env": "^7.25.9",
     "@babel/preset-typescript": "^7.25.9",
     "@griffel/tag-processor": "^1.0.7",
