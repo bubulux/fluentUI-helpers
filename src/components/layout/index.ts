@@ -1,1 +1,1 @@
-imp;
+export { default as Flex } from "@components/layout/Flex/func";
