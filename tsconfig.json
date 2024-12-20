@@ -7,10 +7,10 @@
     // Aliases
     "baseUrl": ".",
     "paths": {
-      "@animations/*": ["src/app/animations/*"],
-      "@components/*": ["src/app/components/*"],
-      "@hooks/*": ["src/app/directives/*"],
-      "@theme/*": ["src/app/theme/*"]
+      "@animations/*": ["src/animations/*"],
+      "@components/*": ["src/components/*"],
+      "@hooks/*": ["src/hooks/*"],
+      "@theme/*": ["src/theme/*"]
     }
   },
   "include": ["src"]

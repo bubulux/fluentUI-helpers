@@ -5,9 +5,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "main": "src/index.ts",
   "author": "bubulus",
   "license": "MIT",
-
   "peerDependencies": {
     "@fluentui/react-components": "^9.55.0",
     "@fluentui/react-icons": "^2.0.261",
@@ -15,7 +15,6 @@
     "react": "^18 || ^17",
     "react-dom": "^18 || ^17"
   },
-
   "devDependencies": {
     "@fluentui/react-components": "^9.55.0",
     "@fluentui/react-icons": "^2.0.261",

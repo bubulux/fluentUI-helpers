@@ -14,7 +14,7 @@ const config = {
     "node_modules/(?!(@fluentui/react-icons)/)",
   ],
   verbose: true,
-  setupFilesAfterEnv: ["<rootDir>/config/tests/unit/browser/jest/setup.ts"],
+  setupFilesAfterEnv: ["<rootDir>/jest.setup.ts"],
   moduleFileExtensions: ["ts", "tsx", "js"],
   moduleNameMapper: pathsToModuleNameMapper(compilerOptions.paths, {
     prefix: "<rootDir>/",
