@@ -12,6 +12,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Set up Node.js
         uses: actions/setup-node@v2
@@ -30,6 +32,6 @@ jobs:
           git config --global user.name "bubulus"
 
       - name: Deploy to GitHub Pages
-        run: make storybook-deploy
+        run: npx gh-pages -d dist/storybook
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
