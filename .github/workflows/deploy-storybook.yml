@@ -24,6 +24,11 @@ jobs:
       - name: Build Storybook
         run: make storybook-build
 
+      - name: Configure Git user
+        run: |
+          git config --global user.email "samus.dev.space@gmail.com"
+          git config --global user.name "bubulus"
+
       - name: Deploy to GitHub Pages
         run: make storybook-deploy
         env:
