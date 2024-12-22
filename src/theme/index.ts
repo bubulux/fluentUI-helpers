@@ -1,3 +1,5 @@
+export { default as ThemeProvider } from "@theme/Provider";
+
 export {
   EThemeSpacing,
   EThemeIconSizes,
