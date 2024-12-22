@@ -3,5 +3,8 @@ run=npm run
 dev-storybook:
 	$(run) dev:storybook
 
-prod-storybook:
-	$(run) prod:storybook
+build-storybook:
+	$(run) build:storybook
+
+preview-build-locally:
+	$(run) preview:storybook
