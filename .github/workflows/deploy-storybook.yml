@@ -25,6 +25,6 @@ jobs:
         run: make storybook-build
 
       - name: Deploy to GitHub Pages
-        run: npx gh-pages -d storybook-static
+        run: make storybook-deploy
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

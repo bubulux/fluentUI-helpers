@@ -14,3 +14,6 @@ $(p)build:
 
 $(p)preview-build-locally:
 	npx http-server $(dist) -p $(preview_port)
+
+$(p)deploy:
+	npx gh-pages -d $(dist)
