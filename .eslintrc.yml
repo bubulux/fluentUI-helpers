@@ -1,0 +1,131 @@
+parser: "@typescript-eslint/parser"
+
+parserOptions:
+  # allows for ES Modules
+  sourceType: "module"
+  # maps our tsconfig with appropriate settings (e.g. paths) to eslint
+  project: "./tsconfig.json"
+  # default recommended settings from vite // alligned with tsconfig
+  ecmaVersion: 2020
+  ecmaFeatures:
+    # enables to parse jsx code (react components)
+    jsx: true
+
+env:
+  # allows for browser specific globals like window, document etc.
+  browser: true
+  # allows for jest specific globals like test, expect etc.
+  jest: true
+
+plugins:
+  - "prettier"
+  - "jest"
+  - "promise"
+  - "@typescript-eslint"
+
+# Important Note: The order of rules IS NOT ARBITRARY, but follows a specific order of precedence
+extends:
+  # --------------------------- Core ------------------------------
+  # create basis for all JS rules, neutral opinions
+  - "eslint:recommended"
+
+  # create basis for all TS rules, neutral opinions, enhanced with typed-linting
+  - "plugin:@typescript-eslint/strict-type-checked"
+  - "plugin:@typescript-eslint/stylistic-type-checked"
+
+  # this introduces React rules and overrides some of the JS and TS rules in favor of AirBnB opinions
+  - airbnb
+  - airbnb-typescript
+  - airbnb/hooks
+
+  # --------------------------- Additional JS ---------------------
+  # NOTE: Make sure that none of the introduced rules conflict with the airbnb rules
+  # suprisingly AirBnB has neither opinions on promises nor deprecations
+  - "plugin:promise/recommended"
+  - "plugin:deprecation/recommended"
+
+  # --------------------------- Additional Libraries ---------------
+  # -- JEST --
+  - "plugin:jest/recommended"
+  - "plugin:jest/style"
+  # -- STORYBOOK --
+  # NOTE: Quote from docs: "This plugin will only be applied to files following the *.stories.* (we recommend this) or *.story.* pattern."
+  # Its recommended to lint also the config files in .storybook, which in our current file context, is painfull to achieve, so this is emmited.
+  # It would not have made any major difference anyhow, can only help with mistyped addon names, we will survive without it...
+  - "plugin:storybook/recommended"
+
+  # --------------------------- Formatting -------------------------
+  # NOTE: Needs to go very last, because the formatting rules should be enforced ONLY by prettier, overwriting some AirBnB rules
+  - "plugin:prettier/recommended"
+
+rules:
+  # --------------------------- RESTORATION -------------------------------
+  # Note: restoring airbnb rules
+  # overwrites are introduced by import/resolver
+  import/order: off
+  import/extensions:
+    - error
+    - ignorePackages
+    - { js: never, jsx: never, ts: never, tsx: never }
+
+  # --------------------------- DEVIATIONS -------------------------------
+  # Note: deviations from rules which are required because default community guidelines might not consider the stack context
+
+  # the default type-definitions from typescript-eslint enforces interfaces (for OOP usage), but because we are in react 16+ functional component context we should stick with types
+  "@typescript-eslint/consistent-type-definitions": ["error", "type"]
+
+  # react is brought default into scope, so we can disable this rule
+  "react/react-in-jsx-scope": off
+
+  # --------------------------- ADDITIONS -------------------------------
+  # In order to ensure consistency in type imports and exports we enforce the consistent type imports and exports rules
+  # these will make sure that imports and exports that concern types are prefixed with the word "type"
+  # also these imports / exports must not be mixed with actual runtime code related imports / exports
+  # essentially the defaults of both rules are enforced
+  "@typescript-eslint/consistent-type-exports": "error"
+  "@typescript-eslint/consistent-type-imports": "error"
+
+  # --------------------------- FORMATTING --------------------------
+  # lints falsely formated code, easier to fix and will be subsequently enforced by ci/cd as well
+  prettier/prettier: "warn"
+
+settings:
+  # makes sure that eslint can resolve aliased imports derived from the paths config in tsconfig
+  import/resolver:
+    typescript:
+      # in case third party packages dont ship their types with them, but with a seperate package, this will help resolve eslint errors
+      # example: lodash might have types in @types/lodash
+      alwaysTryTypes: true
+      # project key is not specified, because if omited, it will default to the tsconfig in the root of the project
+      # meaning: project: "./tsconfig.json"
+  react:
+    # corresponding to the package.json version
+    version: "detect"
+
+# --------------------------- Overrides ------------------------------
+# Note: In general, always denote the reasoning for the override, so that the next person can understand the context
+overrides:
+  # for index files, named exports should be allowed
+  - files: ["index.ts", "index.tsx", "hooks.ts", "hooks.tsx"]
+    rules:
+      import/prefer-default-export: off
+  # is located at src location, but runs devDeps only
+  - files: ["vite.config.mts"]
+    rules:
+      import/no-extraneous-dependencies: off
+  - files: ["**/*"]
+    rules:
+      # because we are not using defaultProps but defaultArguments, we need to augment the rule to resolve when default arguments are provided for the props
+      react/require-default-props:
+        - error
+        - functions: "defaultArguments"
+  # test files, usual naming does not apply do needs to re-disable certain rules
+  - files: ["**/*tests.ts", "**/*tests.tsx"]
+    rules:
+      import/no-extraneous-dependencies: off
+  # storybook files
+  - files: ["**/*stories.ts", "**/*stories.tsx"]
+    rules:
+      import/no-extraneous-dependencies: off
+      react/jsx-props-no-spreading: off
+      react-hooks/rules-of-hooks: off
