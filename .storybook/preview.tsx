@@ -1,7 +1,8 @@
 import React from "react";
 
 import { Preview } from "@storybook/react";
-import { FluentProvider as ThemeProvider } from "@fluentui/react-components";
+
+import { ThemeProvider } from "../src/theme";
 
 const preview: Preview = {
   tags: ["autodocs"],

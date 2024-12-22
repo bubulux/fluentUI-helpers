@@ -3,7 +3,7 @@
     "prefix": "resty",
     "description": "Creates a styles file with makeStyles hook",
     "body": [
-      "import { makeStyles } from \"@lib-theme\";",
+      "import { makeStyles } from \"@theme\";",
       "",
       "const use${TM_DIRECTORY/.*\\/(.*?)$/$1/}Classes = makeStyles({",
       "  root: {",
