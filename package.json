@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "Helper library for microsofts fluentui react library",
   "scripts": {
-    "dev:storybook": "npx storybook dev --no-open",
+    "dev:storybook": "npx storybook dev --no-open -p 39047",
     "prod:storybook": "npx storybook build -o dist/storybook"
   },
   "main": "src/index.ts",
