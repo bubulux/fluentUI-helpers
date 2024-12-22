@@ -33,7 +33,7 @@ jobs:
 
       - name: Deploy to GitHub Pages
         run: |
-          git remote set-url origin https://x-access-token:${PAT_TOKEN}@github.com/${{ github.repository }}
+          git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}
           npx gh-pages -d dist/storybook -u "github-actions-bot <support+actions@github.com>"
         env:
-          PAT_TOKEN: ${{ secrets.PAT_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
