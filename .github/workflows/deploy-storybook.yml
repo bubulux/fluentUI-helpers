@@ -13,7 +13,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.PAT_TOKEN }} # Use PAT token instead
 
       - name: Set up Node.js
         uses: actions/setup-node@v2
@@ -29,9 +29,11 @@ jobs:
       - name: Configure Git user
         run: |
           git config --global user.email "samus.dev.space@gmail.com"
-          git config --global user.name "bubulus"
+          git config --global user.name "bubulux"
 
       - name: Deploy to GitHub Pages
-        run: npx gh-pages -d dist/storybook
+        run: |
+          git remote set-url origin https://x-access-token:${PAT_TOKEN}@github.com/${{ github.repository }}
+          npx gh-pages -d dist/storybook -u "github-actions-bot <support+actions@github.com>"
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PAT_TOKEN: ${{ secrets.PAT_TOKEN }}

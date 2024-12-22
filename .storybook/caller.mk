@@ -16,4 +16,4 @@ $(p)preview-build-locally:
 	npx http-server $(dist) -p $(preview_port)
 
 $(p)deploy:
-	npx gh-pages -d $(dist)
+	npx gh-pages -d $(dist) -u "github-actions-bot <support+actions@github.com>"
