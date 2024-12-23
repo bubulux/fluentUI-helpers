@@ -3,12 +3,10 @@ name: Version Check
 on:
   pull_request:
     branches:
-      - development
-    # types: [opened, synchronize, reopened]
+      - production
 
 jobs:
   version-check:
-    # if: github.head_ref == 'development'
     runs-on: ubuntu-latest
 
     steps:
