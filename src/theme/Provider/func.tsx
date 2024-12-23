@@ -6,10 +6,10 @@ import { useClasses, useStaticStyles } from "@theme/Provider/styles";
 
 export default function ThemeProvider({
   children,
-  theme,
+  theme = "light",
 }: {
   children: ReactNode;
-  theme: "light" | "dark";
+  theme?: "light" | "dark";
 }) {
   useStaticStyles();
 

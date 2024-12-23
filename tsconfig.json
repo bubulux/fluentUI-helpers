@@ -23,7 +23,8 @@
       "@animations/*": ["src/animations/*"],
       "@components/*": ["src/components/*"],
       "@hooks/*": ["src/hooks/*"],
-      "@theme/*": ["src/theme/*"]
+      "@theme/*": ["src/theme/*"],
+      "@test-utils": ["react-testing-library.tsx"]
     }
   },
   "include": ["src"]

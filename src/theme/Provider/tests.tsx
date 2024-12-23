@@ -1,4 +1,4 @@
-import { render, screen } from "@tests-unit-browser";
+import { render, screen } from "@test-utils";
 import "@testing-library/jest-dom";
 
 import ThemeProvider from "@theme/Provider/func";
