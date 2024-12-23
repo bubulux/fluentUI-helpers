@@ -1,4 +1,4 @@
-name: Version Check
+name: Pre deployment pipeline
 
 on:
   pull_request:
@@ -7,7 +7,7 @@ on:
     types: [opened, synchronize, reopened]
 
 jobs:
-  version-check:
+  version-check-for-package:
     # if: github.head_ref == 'development'
     runs-on: ubuntu-latest
 
