@@ -1,17 +1,15 @@
-name: Deploy Storybook to GitHub Pages
+name: Storybook to GitHub Pages Pipeline
 
 on:
   push:
     branches:
       - production
 
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
   contents: read
   pages: write
   id-token: write
 
-# Allow only one concurrent deployment
 concurrency:
   group: "pages"
   cancel-in-progress: true
@@ -26,10 +24,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Load node version
+        run: echo "NODE_VERSION=$(cat .env | grep NODE_VERSION | cut -d '=' -f2)" >> $GITHUB_ENV
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "20.15"
+          node-version: ${{ env.NODE_VERSION }}
           cache: "npm"
 
       - name: Install dependencies

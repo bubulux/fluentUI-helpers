@@ -4,6 +4,8 @@
     "strict": true,
     "noImplicitAny": true,
     "noFallthroughCasesInSwitch": true,
+
+    // ESM
     "target": "ES2020",
     "useDefineForClassFields": true,
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
@@ -18,6 +20,7 @@
     "moduleDetection": "force",
     "noEmit": true,
     "jsx": "react-jsx",
+
     // Aliases
     "baseUrl": ".",
     "paths": {
@@ -25,7 +28,7 @@
       "@components/*": ["src/components/*"],
       "@hooks/*": ["src/hooks/*"],
       "@theme/*": ["src/theme/*"],
-      "@test-utils": ["react-testing-library.tsx"]
+      "@test-utils": ["tests/react-testing-library.tsx"]
     }
   },
   "include": ["src"]

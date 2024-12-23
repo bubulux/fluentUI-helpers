@@ -1,0 +1,24 @@
+name: Version Check
+
+on:
+  pull_request:
+    branches:
+      - production
+
+jobs:
+  version-check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Fetch all branches
+        run: git fetch --all
+
+      - name: Run version check script
+        run: |
+          chmod +x ./ci/check_version.sh
+          ./ci/check_version.sh

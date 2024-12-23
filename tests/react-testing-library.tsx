@@ -3,7 +3,7 @@ import type { ReactNode } from "react";
 import { render } from "@testing-library/react";
 import type { RenderOptions } from "@testing-library/react";
 
-import { ThemeProvider } from "./src/theme";
+import { ThemeProvider } from "../src/theme";
 
 function AllTheProviders({ children }: { children: ReactNode }) {
   return <ThemeProvider>{children}</ThemeProvider>;
