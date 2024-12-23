@@ -9,6 +9,7 @@
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "module": "ESNext",
     "skipLibCheck": true,
+    "esModuleInterop": true,
 
     // Bundler mode
     "moduleResolution": "bundler",
@@ -23,7 +24,8 @@
       "@animations/*": ["src/animations/*"],
       "@components/*": ["src/components/*"],
       "@hooks/*": ["src/hooks/*"],
-      "@theme/*": ["src/theme/*"]
+      "@theme/*": ["src/theme/*"],
+      "@test-utils": ["react-testing-library.tsx"]
     }
   },
   "include": ["src"]

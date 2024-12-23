@@ -34,7 +34,7 @@
   "React Component Test": {
     "prefix": "retes",
     "body": [
-      "//import { render, screen } from '@tests-unit-browser';",
+      "// import { render, screen } from '@test-utils';",
       "import '@testing-library/jest-dom';",
       "",
       "describe('${TM_DIRECTORY/.*\\/(.*)$/$1/}', () => {",
