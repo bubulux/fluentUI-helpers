@@ -1,0 +1,34 @@
+name: CI Checks
+
+on:
+  pull_request:
+    branches:
+      - development
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Load node version
+        run: echo "NODE_VERSION=$(cat .env | grep NODE_VERSION | cut -d '=' -f2)" >> $GITHUB_ENV
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: "npm"
+
+      - run: npm ci
+
+      - name: Lint
+        run: make ci-lint
+
+      - name: Type Check
+        run: make ci-tsc
+
+      - name: Tests
+        run: make ci-test
+
+      - name: Build
+        run: make ci-build
