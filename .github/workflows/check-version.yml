@@ -1,0 +1,21 @@
+name: Version Check
+
+on:
+  pull_request:
+    branches:
+      - production
+    types: [opened, synchronize, reopened]
+
+jobs:
+  version-check:
+    if: github.head_ref == 'development'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Run version check script
+        run: |
+          chmod +x ./ci/check_version.sh
+          ./ci/check_version.sh
