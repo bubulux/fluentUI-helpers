@@ -4,7 +4,6 @@ on:
   pull_request:
     branches:
       - production
-    types: [opened, synchronize, reopened]
 
 jobs:
   version-check-for-package:
