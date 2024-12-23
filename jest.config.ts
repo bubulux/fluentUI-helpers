@@ -9,10 +9,7 @@ const compilerOptions = jsonc.parse(tsconfigContent).compilerOptions;
 
 const config = {
   testEnvironment: "jsdom",
-  transformIgnorePatterns: [
-    // @fluentui/react-icons
-    "node_modules/(?!(@fluentui/react-icons)/)",
-  ],
+  transformIgnorePatterns: ["node_modules/(?!(@fluentui/react-icons)/)"],
   verbose: true,
   setupFilesAfterEnv: ["<rootDir>/jest.setup.ts"],
   moduleFileExtensions: ["ts", "tsx", "js"],
@@ -21,6 +18,16 @@ const config = {
   }),
   testMatch: ["**/tests.{ts,tsx}"],
   collectCoverage: true,
+  transform: {
+    "^.+\\.tsx?$": [
+      "ts-jest",
+      {
+        tsconfig: "./tsconfig.json",
+        useESM: true,
+      },
+    ],
+  },
+  preset: "ts-jest",
 };
 
 export default config;

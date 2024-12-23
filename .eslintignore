@@ -1,2 +1,4 @@
 jest.config.ts
 jest.setup.ts
+vite.config.mts
+tests/react-testing-library.tsx
