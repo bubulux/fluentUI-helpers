@@ -3,7 +3,7 @@ name: Pre deployment pipeline
 on:
   pull_request:
     branches:
-      - production
+      - development
 
 jobs:
   version-check-for-package:
