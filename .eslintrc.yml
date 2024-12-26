@@ -50,8 +50,6 @@ extends:
   - "plugin:jest/style"
   # -- STORYBOOK --
   # NOTE: Quote from docs: "This plugin will only be applied to files following the *.stories.* (we recommend this) or *.story.* pattern."
-  # Its recommended to lint also the config files in .storybook, which in our current file context, is painfull to achieve, so this is emmited.
-  # It would not have made any major difference anyhow, can only help with mistyped addon names, we will survive without it...
   - "plugin:storybook/recommended"
 
   # --------------------------- Formatting -------------------------

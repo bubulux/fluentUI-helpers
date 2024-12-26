@@ -40,7 +40,30 @@ function Wrapper({ token }: { token: "dimension" | "iconSize" | "spacing" }) {
       </Flex>
     ),
     dimension: <></>,
-    spacing: <></>,
+    spacing: (
+      <Flex gap="M" direction="column">
+        <Flex gap="M" alignItems="center">
+          XXS - 2px
+          <div
+            style={{
+              width: EThemeSpacing.XXS,
+              height: "16px",
+              backgroundColor: "black",
+            }}
+          />
+        </Flex>
+        <Flex gap="M" alignItems="center">
+          XS - 4px
+          <div
+            style={{
+              width: EThemeSpacing.XS,
+              height: "16px",
+              backgroundColor: "black",
+            }}
+          />
+        </Flex>
+      </Flex>
+    ),
   };
 
   return showcases[token];
@@ -65,6 +88,14 @@ type Story = StoryObj<typeof Wrapper>;
 
 export const IconSizes: Story = {};
 
-export const Spacing: Story = {};
+export const Spacing: Story = {
+  args: {
+    token: "spacing",
+  },
+};
 
-export const Dimensions: Story = {};
+export const Dimensions: Story = {
+  args: {
+    token: "dimension",
+  },
+};
