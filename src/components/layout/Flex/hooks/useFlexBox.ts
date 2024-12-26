@@ -5,14 +5,13 @@ import { useFlexBoxClasses } from "@components/layout/Flex/styles";
 import type {
   TFlexDirection,
   TFlexOption,
-  TFlexWrap,
 } from "@components/layout/Flex/types";
 
 export default function useFlexBox(
   justifyContent?: TFlexOption,
   alignItems?: TFlexOption,
   direction?: TFlexDirection,
-  wrap?: TFlexWrap,
+  wrap?: boolean,
 ) {
   const classes = useFlexBoxClasses();
   const directionClass = direction
@@ -24,7 +23,8 @@ export default function useFlexBox(
   const alignItemsClass = alignItems
     ? classes[`${alignItems}Items`]
     : undefined;
-  const wrapClass = wrap ? classes[wrap] : undefined;
+
+  const wrapClass = wrap ? classes.wrap : classes.nowrap;
 
   return mergeClasses(
     classes.base,

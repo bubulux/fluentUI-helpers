@@ -17,7 +17,6 @@ import {
 import type {
   TFlexDirection,
   TFlexOption,
-  TFlexWrap,
   TFlexShorthandDimensions,
   TFlexPosition,
 } from "@components/layout/Flex/types";
@@ -28,7 +27,7 @@ type TProps = {
   direction?: TFlexDirection;
   justifyContent?: TFlexOption;
   alignItems?: TFlexOption;
-  wrap?: TFlexWrap;
+  wrap?: boolean;
   className?: string;
   gap?: TThemeSpacing;
   margin?: TThemeShorthandSpacing;
@@ -76,14 +75,14 @@ type TProps = {
  * - `shHeight`: shorthand for height property
  *
  * @default
- * direction = "row", justifyContent = "start", alignItems = "start", wrap = "nowrap", gap = "None", margin = ["None"], padding = ["None"], className = "NoClass"
+ * direction = "row", justifyContent = "start", alignItems = "start", wrap = false, gap = "None", margin = ["None"], padding = ["None"], shHeight = "auto", shWidth = "auto"
  */
 export default function Flex({
   direction = "row",
   position = "static",
   justifyContent = "start",
   alignItems = "start",
-  wrap = "nowrap",
+  wrap = false,
   gap = "None",
   margin = ["None"],
   padding = ["None"],

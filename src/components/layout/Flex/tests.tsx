@@ -102,12 +102,12 @@ describe("Flex", () => {
     });
     describe("for wrap", () => {
       it("should render with wrap wrap", () => {
-        render(<Flex wrap="wrap">FlexChild</Flex>);
+        render(<Flex wrap>FlexChild</Flex>);
         const FlexElement = screen.getByText("FlexChild");
         expect(FlexElement).toHaveStyle("flex-wrap: wrap");
       });
       it("should render with wrap nowrap", () => {
-        render(<Flex wrap="nowrap">FlexChild</Flex>);
+        render(<Flex wrap={false}>FlexChild</Flex>);
         const FlexElement = screen.getByText("FlexChild");
         expect(FlexElement).toHaveStyle("flex-wrap: nowrap");
       });
