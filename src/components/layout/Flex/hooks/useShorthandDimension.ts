@@ -6,7 +6,7 @@ import type { TFlexShorthandDimensions } from "@components/layout/Flex/types";
 
 export default function useShorthandDimension(
   shorthandWidth: TFlexShorthandDimensions,
-  shorthandHeight: TFlexShorthandDimensions
+  shorthandHeight: TFlexShorthandDimensions,
 ) {
   const classes = useDimensionClasses();
 

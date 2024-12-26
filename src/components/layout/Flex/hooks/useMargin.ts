@@ -17,7 +17,7 @@ function useMargin(margin?: TThemeShorthandSpacing) {
       classes[`marginTop${margin[0]}`],
       classes[`marginRight${margin[1]}`],
       classes[`marginBottom${margin[0]}`],
-      classes[`marginLeft${margin[1]}`]
+      classes[`marginLeft${margin[1]}`],
     );
   }
   if (margin.length === 3) {
@@ -25,14 +25,14 @@ function useMargin(margin?: TThemeShorthandSpacing) {
       classes[`marginTop${margin[0]}`],
       classes[`marginRight${margin[1]}`],
       classes[`marginBottom${margin[2]}`],
-      classes[`marginLeft${margin[1]}`]
+      classes[`marginLeft${margin[1]}`],
     );
   }
   return mergeClasses(
     classes[`marginTop${margin[0]}`],
     classes[`marginRight${margin[1]}`],
     classes[`marginBottom${margin[2]}`],
-    classes[`marginLeft${margin[3]}`]
+    classes[`marginLeft${margin[3]}`],
   );
 }
 

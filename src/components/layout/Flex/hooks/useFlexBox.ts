@@ -12,7 +12,7 @@ export default function useFlexBox(
   justifyContent?: TFlexOption,
   alignItems?: TFlexOption,
   direction?: TFlexDirection,
-  wrap?: TFlexWrap
+  wrap?: TFlexWrap,
 ) {
   const classes = useFlexBoxClasses();
   const directionClass = direction
@@ -31,6 +31,6 @@ export default function useFlexBox(
     directionClass,
     justifyContentClass,
     alignItemsClass,
-    wrapClass
+    wrapClass,
   );
 }

@@ -114,7 +114,7 @@ export default function Flex({
         marginClass,
         paddingClass,
         dimensionClass,
-        className
+        className,
       )}
     >
       {children}

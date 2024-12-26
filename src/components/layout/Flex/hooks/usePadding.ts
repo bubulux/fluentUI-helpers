@@ -17,7 +17,7 @@ function usePadding(padding?: TThemeShorthandSpacing) {
       classes[`paddingTop${padding[0]}`],
       classes[`paddingRight${padding[1]}`],
       classes[`paddingBottom${padding[0]}`],
-      classes[`paddingLeft${padding[1]}`]
+      classes[`paddingLeft${padding[1]}`],
     );
   }
   if (padding.length === 3) {
@@ -25,14 +25,14 @@ function usePadding(padding?: TThemeShorthandSpacing) {
       classes[`paddingTop${padding[0]}`],
       classes[`paddingRight${padding[1]}`],
       classes[`paddingBottom${padding[2]}`],
-      classes[`paddingLeft${padding[1]}`]
+      classes[`paddingLeft${padding[1]}`],
     );
   }
   return mergeClasses(
     classes[`paddingTop${padding[0]}`],
     classes[`paddingRight${padding[1]}`],
     classes[`paddingBottom${padding[2]}`],
-    classes[`paddingLeft${padding[3]}`]
+    classes[`paddingLeft${padding[3]}`],
   );
 }
 
