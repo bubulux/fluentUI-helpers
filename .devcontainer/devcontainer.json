@@ -22,7 +22,8 @@
                 "eamodio.gitlens",
                 "wayou.vscode-todo-highlight",
                 "PKief.material-icon-theme",
-                "yoavbls.pretty-ts-errors"
+                "yoavbls.pretty-ts-errors",
+                "unifiedjs.vscode-mdx"
             ]
         }
     },
