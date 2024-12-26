@@ -14,28 +14,25 @@ function Wrapper({ token }: { token: "dimension" | "iconSize" | "spacing" }) {
     iconSize: (
       <Flex gap="M" direction="column" justifyContent="center">
         <Flex gap="M" alignItems="center">
-          XXS - 16px
           <DeleteFilled fontSize={EThemeIconSizes.XXS} />
+          XXS - 16px
         </Flex>
         <Flex gap="M" alignItems="center">
-          XS - 20px
           <DeleteFilled fontSize={EThemeIconSizes.XS} />
+          XS - 20px
         </Flex>
         <Flex gap="M" alignItems="center">
-          S - 24px
-          <DeleteFilled fontSize={EThemeIconSizes.S} />
+          <DeleteFilled fontSize={EThemeIconSizes.S} />S - 24px
         </Flex>
         <Flex gap="M" alignItems="center">
-          M - 28px
-          <DeleteFilled fontSize={EThemeIconSizes.M} />
+          <DeleteFilled fontSize={EThemeIconSizes.M} />M - 28px
         </Flex>
         <Flex gap="M" alignItems="center">
-          L - 32px
-          <DeleteFilled fontSize={EThemeIconSizes.L} />
+          <DeleteFilled fontSize={EThemeIconSizes.L} />L - 32px
         </Flex>
         <Flex gap="M" alignItems="center">
-          XL - 48px
           <DeleteFilled fontSize={EThemeIconSizes.XL} />
+          XL - 48px
         </Flex>
       </Flex>
     ),
@@ -43,24 +40,104 @@ function Wrapper({ token }: { token: "dimension" | "iconSize" | "spacing" }) {
     spacing: (
       <Flex gap="M" direction="column">
         <Flex gap="M" alignItems="center">
-          XXS - 2px
           <div
             style={{
               width: EThemeSpacing.XXS,
               height: "16px",
-              backgroundColor: "black",
+              backgroundColor: "red",
             }}
           />
+          XXS - 2px
         </Flex>
         <Flex gap="M" alignItems="center">
-          XS - 4px
           <div
             style={{
               width: EThemeSpacing.XS,
               height: "16px",
-              backgroundColor: "black",
+              backgroundColor: "red",
             }}
           />
+          XS - 4px
+        </Flex>
+        <Flex gap="M" alignItems="center">
+          <div
+            style={{
+              width: EThemeSpacing.SNudge,
+              height: "16px",
+              backgroundColor: "red",
+            }}
+          />
+          SNudge - 6px
+        </Flex>
+        <Flex gap="M" alignItems="center">
+          <div
+            style={{
+              width: EThemeSpacing.S,
+              height: "16px",
+              backgroundColor: "red",
+            }}
+          />
+          S - 8px
+        </Flex>
+        <Flex gap="M" alignItems="center">
+          <div
+            style={{
+              width: EThemeSpacing.MNudge,
+              height: "16px",
+              backgroundColor: "red",
+            }}
+          />
+          MNudge - 10px
+        </Flex>
+        <Flex gap="M" alignItems="center">
+          <div
+            style={{
+              width: EThemeSpacing.M,
+              height: "16px",
+              backgroundColor: "red",
+            }}
+          />
+          M - 12px
+        </Flex>
+        <Flex gap="M" alignItems="center">
+          <div
+            style={{
+              width: EThemeSpacing.L,
+              height: "16px",
+              backgroundColor: "red",
+            }}
+          />
+          L - 16px
+        </Flex>
+        <Flex gap="M" alignItems="center">
+          <div
+            style={{
+              width: EThemeSpacing.XL,
+              height: "16px",
+              backgroundColor: "red",
+            }}
+          />
+          XL - 20px
+        </Flex>
+        <Flex gap="M" alignItems="center">
+          <div
+            style={{
+              width: EThemeSpacing.XXL,
+              height: "16px",
+              backgroundColor: "red",
+            }}
+          />
+          XXL - 24px
+        </Flex>
+        <Flex gap="M" alignItems="center">
+          <div
+            style={{
+              width: EThemeSpacing.XXXL,
+              height: "16px",
+              backgroundColor: "red",
+            }}
+          />
+          XXXL - 32px
         </Flex>
       </Flex>
     ),
