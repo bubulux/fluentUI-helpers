@@ -1,4 +1,3 @@
-import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 
 import { Flex } from "@components";
@@ -65,7 +64,7 @@ const useClasses = makeStyles({
   },
 });
 
-export const Default: TStory = {
+export const Index: TStory = {
   args: {},
   render: (args) => {
     // eslint-disable-next-line react-hooks/rules-of-hooks

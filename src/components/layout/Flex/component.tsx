@@ -35,30 +35,26 @@ type TProps = {
   shWidth?: TFlexShorthandDimensions;
   shHeight?: TFlexShorthandDimensions;
   testId?: string;
-  onMouseEnter?: () => void;
-  onMouseLeave?: () => void;
 };
 
 /**
  * @description
  * - fluent does not provide a `Flex` component for consistent layout (it was removed in the latest version)
- * - to have a straight forward implementation of `Flex` component, we have created this layout component
  * - having this allows to use fewer makeStyles call and repeting flex configurations in the code
  * - its especially usefull when certain layout styles have to be applied conditionally
  * - for this the entire conditional logic is abstracted inside this component, providing very much styled-component like ergonomics
- *
+ * - supports direct data-testid prop as well as all aria props
  *
  * @props
  * - `direction`: flex-direction property
  * - `justifyContent`: justify-content property
  * - `alignItems`: align-items property
  * - `wrap`: flex-wrap property
- * - `className`: to add additional classes to the component, will override all specified styles from props
  * - `gap`: gap between children, with fixed predefined values from the design system, not discriminating between horizontal and vertical gap (because there are literally the same values)
  * - `margin`: margin property, using the same values like gap, expects the shorthand notation
- * - `padding`: same like margin, but for padding
+ * - `padding`: same like margin, but for padding, concrete example below
  *
- * ```
+ * ```jsx
  * // the shorthand is not a simple string, but rather defined as an array that can be of size 1 up to 4
  * // each element provides additional restraint from the design system tokens
  * // following examples will only use padding, but the same applies to margin
@@ -70,9 +66,12 @@ type TProps = {
  * <Flex padding={["S", "M", "L", "XL"]} /> // like saying padding: `${tokens.spacing*S} ${tokens.spacing*M} ${tokens.spacing*L} ${tokens.spacing*XL}`;
  *
  * ```
- * - `testId`: passed down the data-testid attribute
  * - `shWidth`: shorthand for width property
  * - `shHeight`: shorthand for height property
+ * - `className`: to add additional classes to the component, will override all specified styles from props
+ * - `aria-*`: all aria props are supported, they will be spread on the root div
+ * - `testId`: passed down the data-testid attribute
+ *
  *
  * @default
  * direction = "row", justifyContent = "start", alignItems = "start", wrap = false, gap = "None", margin = ["None"], padding = ["None"], shHeight = "auto", shWidth = "auto"
