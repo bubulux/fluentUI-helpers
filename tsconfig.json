@@ -24,10 +24,12 @@
     // Aliases
     "baseUrl": ".",
     "paths": {
-      "@animations/*": ["src/animations/*"],
       "@components/*": ["src/components/*"],
+      "@components": ["src/components/index.ts"],
       "@hooks/*": ["src/hooks/*"],
+      "@hooks": ["src/hooks/index.ts"],
       "@theme/*": ["src/theme/*"],
+      "@theme": ["src/theme/index.ts"],
       "@test-utils": ["tests/react-testing-library.tsx"]
     }
   },

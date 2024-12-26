@@ -1,12 +1,12 @@
-import { mergeClasses } from "@lib-fluent/theme";
+import { mergeClasses } from "@fluentui/react-components";
 
-import { useDimensionClasses } from "@lib-fluent/components/layout/Flex/styles";
+import { useDimensionClasses } from "@components/layout/Flex/styles";
 
-import type { TFlexShorthandDimensions } from "@lib-fluent/components/layout/Flex/types";
+import type { TFlexShorthandDimensions } from "@components/layout/Flex/types";
 
 export default function useShorthandDimension(
   shorthandWidth: TFlexShorthandDimensions,
-  shorthandHeight: TFlexShorthandDimensions,
+  shorthandHeight: TFlexShorthandDimensions
 ) {
   const classes = useDimensionClasses();
 

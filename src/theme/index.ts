@@ -5,3 +5,5 @@ export {
   EThemeIconSizes,
   EThemeDimensions,
 } from "@theme/tokens";
+
+export type { TThemeSpacing, TThemeShorthandSpacing } from "@theme/types";

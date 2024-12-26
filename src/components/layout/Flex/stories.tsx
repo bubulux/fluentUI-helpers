@@ -1,10 +1,10 @@
 import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { Flex } from "@lib-fluent/components";
-import { makeStyles } from "@lib-fluent/theme";
+import { Flex } from "@components";
+import { makeStyles } from "@fluentui/react-components";
 
-import type { TThemeSpacing } from "@lib-fluent/theme";
+import type { TThemeSpacing } from "@theme";
 
 const meta: Meta<typeof Flex> = {
   component: Flex,

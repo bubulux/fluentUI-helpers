@@ -1,8 +1,8 @@
 import React from "react";
 import type { ReactNode } from "react";
 
-import { mergeClasses } from "@lib-fluent/theme";
-import type { TThemeSpacing, TThemeShorthandSpacing } from "@lib-fluent/theme";
+import { mergeClasses } from "@fluentui/react-components";
+import type { TThemeSpacing, TThemeShorthandSpacing } from "@theme";
 
 import {
   useGap,
@@ -12,7 +12,7 @@ import {
   useShorthandDimension,
   useAriaProps,
   usePosition,
-} from "@lib-fluent/components/layout/Flex/hooks";
+} from "@components/layout/Flex/hooks";
 
 import type {
   TFlexDirection,
@@ -20,7 +20,7 @@ import type {
   TFlexWrap,
   TFlexShorthandDimensions,
   TFlexPosition,
-} from "@lib-fluent/components/layout/Flex/types";
+} from "@components/layout/Flex/types";
 
 type TProps = {
   children: ReactNode;
@@ -114,7 +114,7 @@ export default function Flex({
         marginClass,
         paddingClass,
         dimensionClass,
-        className,
+        className
       )}
     >
       {children}

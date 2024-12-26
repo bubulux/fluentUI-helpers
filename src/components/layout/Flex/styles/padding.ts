@@ -1,4 +1,5 @@
-import { makeStyles, EThemeSpacing } from "@lib-fluent/theme";
+import { makeStyles } from "@fluentui/react-components";
+import { EThemeSpacing } from "@theme";
 
 const usePaddingClasses = makeStyles({
   paddingNone: {

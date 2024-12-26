@@ -1,18 +1,18 @@
-import { mergeClasses } from "@lib-fluent/theme";
+import { mergeClasses } from "@fluentui/react-components";
 
-import { useFlexBoxClasses } from "@lib-fluent/components/layout/Flex/styles";
+import { useFlexBoxClasses } from "@components/layout/Flex/styles";
 
 import type {
   TFlexDirection,
   TFlexOption,
   TFlexWrap,
-} from "@lib-fluent/components/layout/Flex/types";
+} from "@components/layout/Flex/types";
 
 export default function useFlexBox(
   justifyContent?: TFlexOption,
   alignItems?: TFlexOption,
   direction?: TFlexDirection,
-  wrap?: TFlexWrap,
+  wrap?: TFlexWrap
 ) {
   const classes = useFlexBoxClasses();
   const directionClass = direction
@@ -31,6 +31,6 @@ export default function useFlexBox(
     directionClass,
     justifyContentClass,
     alignItemsClass,
-    wrapClass,
+    wrapClass
   );
 }

@@ -1,6 +1,6 @@
-import type { TFlexPosition } from "@lib-fluent/components/layout/Flex/types";
+import type { TFlexPosition } from "@components/layout/Flex/types";
 
-import { usePositionClasses } from "@lib-fluent/components/layout/Flex/styles";
+import { usePositionClasses } from "@components/layout/Flex/styles";
 
 export default function usePosition(position: TFlexPosition) {
   const classes = usePositionClasses();

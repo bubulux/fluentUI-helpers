@@ -1,4 +1,4 @@
-import { makeStyles } from "@lib-fluent/theme";
+import { makeStyles } from "@fluentui/react-components";
 
 const usePositionClasses = makeStyles({
   "-moz-initial": {
