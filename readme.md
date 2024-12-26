@@ -4,6 +4,10 @@
 
 This library is aimed at folks who work with Microsoft's Fluent UI library but think it lacks some features here and there.
 
+### Is this stable?
+
+Not quite yet, from `1.*` onward it will be, as long as its in `0.*` consider it unstable.
+
 ### What does it contain?
 
 It contains helpful hooks, components, and theme utilities that I was maintaining across different projects. I decided to create this central repository to share these utilities.
