@@ -1,4 +1,4 @@
-name: Version Check
+name: Versioning Pipeline
 
 on:
   pull_request:
@@ -6,7 +6,7 @@ on:
       - production
 
 jobs:
-  version-check:
+  check:
     runs-on: ubuntu-latest
 
     steps:

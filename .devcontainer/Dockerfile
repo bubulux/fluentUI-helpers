@@ -5,5 +5,3 @@ FROM mcr.microsoft.com/devcontainers/base:alpine-${ALPINE_VERSION}
 
 ARG NODE_VERSION
 RUN apk update && apk add --no-cache nodejs=${NODE_VERSION} npm
-
-WORKDIR /workspaces/datc
