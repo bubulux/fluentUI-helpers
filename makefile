@@ -1,5 +1,7 @@
 include ./.storybook/caller.mk
 include ./ci/caller.mk
+include ./cd/caller.mk
+
 
 RED="\033[0;31m"
 GREEN="\033[0;32m"

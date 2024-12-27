@@ -37,7 +37,7 @@ jobs:
         run: npm ci
 
       - name: Build Storybook
-        run: make storybook-build
+        run: make cd-build-storybook
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
@@ -45,7 +45,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: dist/storybook
+          path: .storybook/dist
 
       - name: Deploy to GitHub Pages
         id: deployment
@@ -67,6 +67,9 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
+
+      - name: Build package
+        run: make cd-build-package
 
       - name: Get version
         id: package-version
