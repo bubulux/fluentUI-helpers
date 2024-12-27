@@ -12,10 +12,10 @@ $(p)lint-fix:
 	@$(call echo_yellow, "--> Linting and fixing...")
 	@npx eslint src/ --fix
 
-$(p)build:
-	@make storybook-build
-	@$(call echo_red, "--> removing dist folder...")
-	rm -rf dist
+$(p)builds:
+	@$(call echo_purple, "--> Checking integrity of builds...")
+	@make -s storybook-build
+	@make -s cd-build-package
 
 $(p)tsc:
 	@$(call echo_yellow, "--> Compiling...")
@@ -29,6 +29,6 @@ $(p)local-all:
 	@$(call echo_green, "--> Compiling done.")
 	@make -s $(p)test 
 	@$(call echo_green, "--> Testing done.")
-	@make -s $(p)build
+	@make -s $(p)builds
 	@$(call echo_green, "--> Building done.")
 	@$(call echo_blue, "--> All local CI tasks done.")

@@ -4,7 +4,7 @@ npx_s=npx storybook
 
 dev_port=39047
 preview_port=8080
-dist=dist/storybook
+export dist=.storybook/dist
 
 $(p)dev:
 	@$(call echo_yellow, "--> Running Storybook in development mode...")

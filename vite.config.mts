@@ -26,10 +26,10 @@ export default defineConfig({
     tsconfigPaths(),
     dts({
       exclude: [
-        "**/*.stories.ts",
-        "**/*.stories.tsx",
-        "**/*.test.ts",
-        "**/*.test.tsx",
+        "**/stories.ts",
+        "**/stories.tsx",
+        "**/tests.ts",
+        "**/tests.tsx",
       ],
     }),
   ],
