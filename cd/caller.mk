@@ -1,5 +1,5 @@
 p=cd-
 
-$(p)-package-build:
+$(p)build-package:
 	@$(call echo_yellow, "--> Building package...")
 	@npx vite build
