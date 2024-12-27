@@ -1,34 +1,33 @@
-p=ci-
-
-$(p)test:
+ci-test:
 	@$(call echo_yellow, "--> Jest Testing...")
 	@npx jest
 
-$(p)lint:
+ci-lint:
 	@$(call echo_yellow, "--> Linting...")
 	@npx eslint src/
 
-$(p)lint-fix:
+ci-lint-fix:
 	@$(call echo_yellow, "--> Linting and fixing...")
 	@npx eslint src/ --fix
 
-$(p)builds:
-	@$(call echo_purple, "--> Checking integrity of builds...")
-	@make -s storybook-build
-	@make -s cd-build-package
-
-$(p)tsc:
+ci-tsc:
 	@$(call echo_yellow, "--> Compiling...")
 	@npx tsc
 
-$(p)local-all:
+ci-local-all:
 	@$(call echo_blue, "--> Running all local CI tasks...") 
-	@make -s $(p)lint 
+	@make -s ci-lint 
 	@$(call echo_green, "--> Linting done.")
-	@make -s $(p)tsc 
+	@make -s ci-tsc 
 	@$(call echo_green, "--> Compiling done.")
-	@make -s $(p)test 
+	@make -s ci-test 
 	@$(call echo_green, "--> Testing done.")
-	@make -s $(p)builds
-	@$(call echo_green, "--> Building done.")
+
+	@$(call echo_purple, "--> Checking integrity of builds...")
+	@make -s cd-build-storybook
+	@$(call echo_green, "--> Storybook build successfull.")
+	@make -s cd-build-package
+	@$(call echo_green, "--> Package build successfull.")
+	@$(call echo_purple, "--> Build integrity checked.")
+	
 	@$(call echo_blue, "--> All local CI tasks done.")
