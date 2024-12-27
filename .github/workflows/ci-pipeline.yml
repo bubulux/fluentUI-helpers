@@ -30,5 +30,8 @@ jobs:
       - name: Tests
         run: make ci-test
 
-      - name: Build
-        run: make ci-build
+      - name: Build Integrity Package
+        run: make cd-build-package
+
+      - name: Build Integrity Storybook
+        run: make cd-build-storybook
