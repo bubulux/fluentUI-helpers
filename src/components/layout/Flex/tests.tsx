@@ -257,6 +257,43 @@ describe("Flex", () => {
         expect(FlexElement).toHaveStyle("flex-shrink: 1");
       });
     });
+    describe("for basis", () => {
+      it("should render with basis auto", () => {
+        render(<Flex basis="auto">FlexChild</Flex>);
+        const FlexElement = screen.getByText("FlexChild");
+        expect(FlexElement).toHaveStyle("flex-basis: auto");
+      });
+      it("should render with basis fill", () => {
+        render(<Flex basis="fill">FlexChild</Flex>);
+        const FlexElement = screen.getByText("FlexChild");
+        expect(FlexElement).toHaveStyle("flex-basis: fill");
+      });
+      it("should render with basis maxContent", () => {
+        render(<Flex basis="maxContent">FlexChild</Flex>);
+        const FlexElement = screen.getByText("FlexChild");
+        expect(FlexElement).toHaveStyle("flex-basis: max-content");
+      });
+      it("should render with basis minContent", () => {
+        render(<Flex basis="minContent">FlexChild</Flex>);
+        const FlexElement = screen.getByText("FlexChild");
+        expect(FlexElement).toHaveStyle("flex-basis: min-content");
+      });
+      it("should render with basis fitContent", () => {
+        render(<Flex basis="fitContent">FlexChild</Flex>);
+        const FlexElement = screen.getByText("FlexChild");
+        expect(FlexElement).toHaveStyle("flex-basis: fit-content");
+      });
+      it("should render with basis content", () => {
+        render(<Flex basis="content">FlexChild</Flex>);
+        const FlexElement = screen.getByText("FlexChild");
+        expect(FlexElement).toHaveStyle("flex-basis: content");
+      });
+      it("should render with basis 0", () => {
+        render(<Flex basis="0">FlexChild</Flex>);
+        const FlexElement = screen.getByText("FlexChild");
+        expect(FlexElement).toHaveStyle("flex-basis: 0");
+      });
+    });
     describe("for margin", () => {
       it("should render with margin None", () => {
         render(<Flex margin={["None"]}>FlexChild</Flex>);

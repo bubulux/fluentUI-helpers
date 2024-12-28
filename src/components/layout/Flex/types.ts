@@ -29,7 +29,7 @@ export type TFlexBasis =
   | "minContent"
   | "fitContent"
   | "content"
-  | 0;
+  | "0";
 export type TFlexShorthandDimensions = "25%" | "50%" | "75%" | "100%" | "auto";
 
 export type TFlexPosition =
