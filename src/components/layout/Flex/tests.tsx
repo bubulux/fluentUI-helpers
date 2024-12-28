@@ -233,6 +233,30 @@ describe("Flex", () => {
         expect(FlexElement).toHaveStyle("gap: 2rem");
       });
     });
+    describe("for grow", () => {
+      it("should render with grow true", () => {
+        render(<Flex grow>FlexChild</Flex>);
+        const FlexElement = screen.getByText("FlexChild");
+        expect(FlexElement).toHaveStyle("flex-grow: 1");
+      });
+      it("should render with grow false", () => {
+        render(<Flex grow={false}>FlexChild</Flex>);
+        const FlexElement = screen.getByText("FlexChild");
+        expect(FlexElement).toHaveStyle("flex-grow: 0");
+      });
+    });
+    describe("for noShrink", () => {
+      it("should render with noShrink true", () => {
+        render(<Flex noShrink>FlexChild</Flex>);
+        const FlexElement = screen.getByText("FlexChild");
+        expect(FlexElement).toHaveStyle("flex-shrink: 0");
+      });
+      it("should render with noShrink false", () => {
+        render(<Flex noShrink={false}>FlexChild</Flex>);
+        const FlexElement = screen.getByText("FlexChild");
+        expect(FlexElement).toHaveStyle("flex-shrink: 1");
+      });
+    });
     describe("for margin", () => {
       it("should render with margin None", () => {
         render(<Flex margin={["None"]}>FlexChild</Flex>);
