@@ -35,7 +35,7 @@ type TProps = {
   alignContent?: TFlexOptionContent;
   alignSelf?: TFlexOptionItems;
   grow?: TFlexGrow;
-  shrink?: TFlexShrink;
+  noShrink?: TFlexShrink;
   basis?: TFlexBasis;
   wrap?: TFlexWrap;
   className?: string;
@@ -64,7 +64,7 @@ type TProps = {
  * - `wrap`: flex-wrap property
  * - `gap`: gap between children, with fixed predefined values from the design system, not discriminating between horizontal and vertical gap (because there are literally the same values)
  * - `grow`: shorthand for flex-grow property
- * - `shrink`: shorthand for flex-shrink property
+ * - `noShrink`: shorthand for flex-shrink property, noShrik is the same as flex-shrink: 0
  * - `basis`: shorthand for flex-basis property, only global values are supported, for specific values use className prop
  * - `position`: position property, supports all global values
  * - `margin`: margin property, using the same values like gap, expects the shorthand notation
@@ -102,7 +102,7 @@ export default function Flex({
   wrap = false,
   gap = "None",
   grow = false,
-  shrink = false,
+  noShrink = false,
   basis = "auto",
   margin = ["None"],
   padding = ["None"],
@@ -121,7 +121,7 @@ export default function Flex({
     direction,
     wrap,
     grow,
-    shrink,
+    noShrink,
     basis,
   );
   const gapClass = useGap(gap);

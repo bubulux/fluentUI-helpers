@@ -15,7 +15,12 @@ describe("Flex", () => {
     expect(FlexElement).toHaveStyle("flex-direction: row");
     expect(FlexElement).toHaveStyle("justify-content: flex-start");
     expect(FlexElement).toHaveStyle("align-items: flex-start");
+    expect(FlexElement).toHaveStyle("align-content: flex-start");
+    expect(FlexElement).toHaveStyle("align-self: flex-start");
+    expect(FlexElement).toHaveStyle("flex-grow: 0");
+    expect(FlexElement).toHaveStyle("flex-shrink: 1");
     expect(FlexElement).toHaveStyle("flex-wrap: nowrap");
+    expect(FlexElement).toHaveStyle("flex-basis: auto");
     expect(FlexElement).toHaveStyle("gap: 0rem");
     expect(FlexElement).toHaveStyle("margin: 0rem");
     expect(FlexElement).toHaveStyle("padding: 0rem");
@@ -78,6 +83,38 @@ describe("Flex", () => {
         expect(FlexElement).toHaveStyle("justify-content: stretch");
       });
     });
+    describe("for alignContent", () => {
+      it("should render with alignContent center", () => {
+        render(<Flex alignContent="center">FlexChild</Flex>);
+        const FlexElement = screen.getByText("FlexChild");
+        expect(FlexElement).toHaveStyle("align-content: center");
+      });
+      it("should render with alignContent end", () => {
+        render(<Flex alignContent="end">FlexChild</Flex>);
+        const FlexElement = screen.getByText("FlexChild");
+        expect(FlexElement).toHaveStyle("align-content: flex-end");
+      });
+      it("should render with alignContent spaceBetween", () => {
+        render(<Flex alignContent="spaceBetween">FlexChild</Flex>);
+        const FlexElement = screen.getByText("FlexChild");
+        expect(FlexElement).toHaveStyle("align-content: space-between");
+      });
+      it("should render with alignContent spaceAround", () => {
+        render(<Flex alignContent="spaceAround">FlexChild</Flex>);
+        const FlexElement = screen.getByText("FlexChild");
+        expect(FlexElement).toHaveStyle("align-content: space-around");
+      });
+      it("should render with alignContent spaceEvenly", () => {
+        render(<Flex alignContent="spaceEvenly">FlexChild</Flex>);
+        const FlexElement = screen.getByText("FlexChild");
+        expect(FlexElement).toHaveStyle("align-content: space-evenly");
+      });
+      it("should render with alignContent stretch", () => {
+        render(<Flex alignContent="stretch">FlexChild</Flex>);
+        const FlexElement = screen.getByText("FlexChild");
+        expect(FlexElement).toHaveStyle("align-content: stretch");
+      });
+    });
     describe("for alignItems", () => {
       it("should render with alignItems center", () => {
         render(<Flex alignItems="center">FlexChild</Flex>);
@@ -93,6 +130,33 @@ describe("Flex", () => {
         render(<Flex alignItems="stretch">FlexChild</Flex>);
         const FlexElement = screen.getByText("FlexChild");
         expect(FlexElement).toHaveStyle("align-items: stretch");
+      });
+      it("should render with alignItems baseline", () => {
+        render(<Flex alignItems="baseline">FlexChild</Flex>);
+        const FlexElement = screen.getByText("FlexChild");
+        expect(FlexElement).toHaveStyle("align-items: baseline");
+      });
+    });
+    describe("for alignSelf", () => {
+      it("should render with alignSelf center", () => {
+        render(<Flex alignSelf="center">FlexChild</Flex>);
+        const FlexElement = screen.getByText("FlexChild");
+        expect(FlexElement).toHaveStyle("align-self: center");
+      });
+      it("should render with alignSelf end", () => {
+        render(<Flex alignSelf="end">FlexChild</Flex>);
+        const FlexElement = screen.getByText("FlexChild");
+        expect(FlexElement).toHaveStyle("align-self: flex-end");
+      });
+      it("should render with alignSelf stretch", () => {
+        render(<Flex alignSelf="stretch">FlexChild</Flex>);
+        const FlexElement = screen.getByText("FlexChild");
+        expect(FlexElement).toHaveStyle("align-self: stretch");
+      });
+      it("should render with alignSelf baseline", () => {
+        render(<Flex alignSelf="baseline">FlexChild</Flex>);
+        const FlexElement = screen.getByText("FlexChild");
+        expect(FlexElement).toHaveStyle("align-self: baseline");
       });
     });
     describe("for wrap", () => {

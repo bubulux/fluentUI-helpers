@@ -20,7 +20,7 @@ export default function useFlexBox(
   direction?: TFlexDirection,
   wrap?: TFlexWrap,
   grow?: TFlexGrow,
-  shrink?: TFlexShrink,
+  noShrink?: TFlexShrink,
   basis?: TFlexBasis,
 ) {
   const classes = useFlexBoxClasses();
@@ -48,7 +48,7 @@ export default function useFlexBox(
   const basisClass = basis ? classes[`${basis}Basis`] : undefined;
 
   const growClass = grow ? classes.growOne : classes.growZero;
-  const shrinkClass = shrink ? classes.shrinkOne : classes.shrinkZero;
+  const shrinkClass = noShrink ? classes.shrinkZero : classes.shrinkOne;
   const wrapClass = wrap
     ? (wrap === "reverse" && classes.wrapReverse) || classes.wrap
     : classes.nowrap;
