@@ -1,4 +1,4 @@
-export type TFlexDirection = "row" | "column";
+export type TFlexDirection = "row" | "column" | "rowReverse" | "columnReverse";
 
 export type TFlexOptionContent =
   | "start"

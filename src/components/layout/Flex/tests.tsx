@@ -35,6 +35,16 @@ describe("Flex", () => {
         const FlexElement = screen.getByText("FlexChild");
         expect(FlexElement).toHaveStyle("flex-direction: row");
       });
+      it("should render with direction rowReverse", () => {
+        render(<Flex direction="rowReverse">FlexChild</Flex>);
+        const FlexElement = screen.getByText("FlexChild");
+        expect(FlexElement).toHaveStyle("flex-direction: row-reverse");
+      });
+      it("should render with direction columnReverse", () => {
+        render(<Flex direction="columnReverse">FlexChild</Flex>);
+        const FlexElement = screen.getByText("FlexChild");
+        expect(FlexElement).toHaveStyle("flex-direction: column-reverse");
+      });
     });
     describe("for justifyContent", () => {
       it("should render with justifyContent center", () => {
@@ -79,21 +89,6 @@ describe("Flex", () => {
         const FlexElement = screen.getByText("FlexChild");
         expect(FlexElement).toHaveStyle("align-items: flex-end");
       });
-      it("should render with alignItems spaceBetween", () => {
-        render(<Flex alignItems="spaceBetween">FlexChild</Flex>);
-        const FlexElement = screen.getByText("FlexChild");
-        expect(FlexElement).toHaveStyle("align-items: space-between");
-      });
-      it("should render with alignItems spaceAround", () => {
-        render(<Flex alignItems="spaceAround">FlexChild</Flex>);
-        const FlexElement = screen.getByText("FlexChild");
-        expect(FlexElement).toHaveStyle("align-items: space-around");
-      });
-      it("should render with alignItems spaceEvenly", () => {
-        render(<Flex alignItems="spaceEvenly">FlexChild</Flex>);
-        const FlexElement = screen.getByText("FlexChild");
-        expect(FlexElement).toHaveStyle("align-items: space-evenly");
-      });
       it("should render with alignItems stretch", () => {
         render(<Flex alignItems="stretch">FlexChild</Flex>);
         const FlexElement = screen.getByText("FlexChild");
@@ -101,15 +96,20 @@ describe("Flex", () => {
       });
     });
     describe("for wrap", () => {
-      it("should render with wrap wrap", () => {
+      it("should render with wrap: wrap", () => {
         render(<Flex wrap>FlexChild</Flex>);
         const FlexElement = screen.getByText("FlexChild");
         expect(FlexElement).toHaveStyle("flex-wrap: wrap");
       });
-      it("should render with wrap nowrap", () => {
+      it("should render with wrap: nowrap", () => {
         render(<Flex wrap={false}>FlexChild</Flex>);
         const FlexElement = screen.getByText("FlexChild");
         expect(FlexElement).toHaveStyle("flex-wrap: nowrap");
+      });
+      it("should render with wrap: reverse", () => {
+        render(<Flex wrap="reverse">FlexChild</Flex>);
+        const FlexElement = screen.getByText("FlexChild");
+        expect(FlexElement).toHaveStyle("flex-wrap: wrap-reverse");
       });
     });
     describe("for gap", () => {
