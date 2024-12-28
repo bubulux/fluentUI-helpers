@@ -1,6 +1,6 @@
 export type TFlexDirection = "row" | "column";
 
-export type TFlexOption =
+export type TFlexOptionContent =
   | "start"
   | "center"
   | "end"
@@ -9,8 +9,27 @@ export type TFlexOption =
   | "spaceEvenly"
   | "stretch";
 
-export type TFlexWrap = "wrap" | "nowrap";
+export type TFlexOptionItems =
+  | "start"
+  | "center"
+  | "end"
+  | "stretch"
+  | "baseline";
 
+export type TFlexGrow = boolean;
+
+export type TFlexShrink = boolean;
+
+export type TFlexWrap = boolean | "reverse";
+
+export type TFlexBasis =
+  | "auto"
+  | "fill"
+  | "maxContent"
+  | "minContent"
+  | "fitContent"
+  | "content"
+  | 0;
 export type TFlexShorthandDimensions = "25%" | "50%" | "75%" | "100%" | "auto";
 
 export type TFlexPosition =

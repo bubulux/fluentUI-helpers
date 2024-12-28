@@ -16,7 +16,12 @@ import {
 
 import type {
   TFlexDirection,
-  TFlexOption,
+  TFlexOptionContent,
+  TFlexOptionItems,
+  TFlexWrap,
+  TFlexGrow,
+  TFlexShrink,
+  TFlexBasis,
   TFlexShorthandDimensions,
   TFlexPosition,
 } from "@components/layout/Flex/types";
@@ -25,9 +30,14 @@ type TProps = {
   children: ReactNode;
   position?: TFlexPosition;
   direction?: TFlexDirection;
-  justifyContent?: TFlexOption;
-  alignItems?: TFlexOption;
-  wrap?: boolean;
+  justifyContent?: TFlexOptionContent;
+  alignItems?: TFlexOptionItems;
+  alignContent?: TFlexOptionContent;
+  alignSelf?: TFlexOptionItems;
+  grow?: TFlexGrow;
+  shrink?: TFlexShrink;
+  basis?: TFlexBasis;
+  wrap?: TFlexWrap;
   className?: string;
   gap?: TThemeSpacing;
   margin?: TThemeShorthandSpacing;
@@ -49,8 +59,14 @@ type TProps = {
  * - `direction`: flex-direction property
  * - `justifyContent`: justify-content property
  * - `alignItems`: align-items property
+ * - `alignContent`: align-content property
+ * - `alignSelf`: align-self property
  * - `wrap`: flex-wrap property
  * - `gap`: gap between children, with fixed predefined values from the design system, not discriminating between horizontal and vertical gap (because there are literally the same values)
+ * - `grow`: shorthand for flex-grow property
+ * - `shrink`: shorthand for flex-shrink property
+ * - `basis`: shorthand for flex-basis property, only global values are supported, for specific values use className prop
+ * - `position`: position property, supports all global values
  * - `margin`: margin property, using the same values like gap, expects the shorthand notation
  * - `padding`: same like margin, but for padding, concrete example below
  *
@@ -80,9 +96,14 @@ export default function Flex({
   direction = "row",
   position = "static",
   justifyContent = "start",
+  alignContent = "start",
+  alignSelf = "start",
   alignItems = "start",
   wrap = false,
   gap = "None",
+  grow = false,
+  shrink = false,
+  basis = "auto",
   margin = ["None"],
   padding = ["None"],
   shHeight = "auto",
@@ -92,7 +113,17 @@ export default function Flex({
   children,
   ...rest
 }: TProps) {
-  const flexBoxClass = useFlexBox(justifyContent, alignItems, direction, wrap);
+  const flexBoxClass = useFlexBox(
+    justifyContent,
+    alignContent,
+    alignItems,
+    alignSelf,
+    direction,
+    wrap,
+    grow,
+    shrink,
+    basis,
+  );
   const gapClass = useGap(gap);
   const marginClass = useMargin(margin);
   const paddingClass = usePadding(padding);
