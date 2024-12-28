@@ -8,9 +8,18 @@
   "files": [
     "dist"
   ],
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "author": "bubulus",
   "license": "MIT",
   "peerDependencies": {
+    "@fluentui/react-components": "^9",
+    "@fluentui/react-icons": "^2",
+    "@griffel/react": "^1.5",
     "@fluentui/react-components": "^9",
     "@fluentui/react-icons": "^2",
     "@griffel/react": "^1.5",
@@ -68,6 +77,7 @@
     "ts-node": "^10.9.2",
     "typescript": "5.5.4",
     "vite": "^5.4.8",
+    "vite-plugin-dts": "^4.4.0",
     "vite-plugin-dts": "^4.4.0",
     "vite-tsconfig-paths": "^5.0.1"
   }
