@@ -41,6 +41,9 @@ const useFlexBoxClasses = makeStyles({
   },
 
   // align-items
+  autoAlignItems: {
+    alignItems: "auto",
+  },
   centerAlignItems: {
     alignItems: "center",
   },
@@ -58,6 +61,9 @@ const useFlexBoxClasses = makeStyles({
   },
 
   // align-self
+  autoAlignSelf: {
+    alignSelf: "auto",
+  },
   startAlignSelf: {
     alignSelf: "flex-start",
   },

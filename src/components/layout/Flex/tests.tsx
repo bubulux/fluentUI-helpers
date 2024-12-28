@@ -8,15 +8,15 @@ describe("Flex", () => {
   it("should render without required props default config", () => {
     render(<Flex>FlexChild</Flex>);
     const FlexElement = screen.getByText("FlexChild");
-
     expect(FlexElement).toBeInTheDocument();
+
     expect(FlexElement).toHaveTextContent("FlexChild");
     expect(FlexElement).toHaveStyle("display: flex");
     expect(FlexElement).toHaveStyle("flex-direction: row");
     expect(FlexElement).toHaveStyle("justify-content: flex-start");
-    expect(FlexElement).toHaveStyle("align-items: flex-start");
-    expect(FlexElement).toHaveStyle("align-content: flex-start");
-    expect(FlexElement).toHaveStyle("align-self: flex-start");
+    expect(FlexElement).toHaveStyle("align-items: stretch");
+    expect(FlexElement).toHaveStyle("align-content: stretch");
+    expect(FlexElement).toHaveStyle("align-self: auto");
     expect(FlexElement).toHaveStyle("flex-grow: 0");
     expect(FlexElement).toHaveStyle("flex-shrink: 1");
     expect(FlexElement).toHaveStyle("flex-wrap: nowrap");

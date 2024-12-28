@@ -14,7 +14,8 @@ export type TFlexOptionItems =
   | "center"
   | "end"
   | "stretch"
-  | "baseline";
+  | "baseline"
+  | "auto";
 
 export type TFlexGrow = boolean;
 
