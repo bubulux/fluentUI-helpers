@@ -10,49 +10,97 @@ const useFlexBoxClasses = makeStyles({
   columnDirection: {
     flexDirection: "column",
   },
+  rowReverseDirection: {
+    flexDirection: "row-reverse",
+  },
+  columnReverseDirection: {
+    flexDirection: "column-reverse",
+  },
+
   // justify-content
-  centerContent: {
+  centerJustifyContent: {
     justifyContent: "center",
   },
-  startContent: {
+  startJustifyContent: {
     justifyContent: "flex-start",
   },
-  endContent: {
+  endJustifyContent: {
     justifyContent: "flex-end",
   },
-  spaceBetweenContent: {
+  spaceBetweenJustifyContent: {
     justifyContent: "space-between",
   },
-  spaceAroundContent: {
+  spaceAroundJustifyContent: {
     justifyContent: "space-around",
   },
-  spaceEvenlyContent: {
+  spaceEvenlyJustifyContent: {
     justifyContent: "space-evenly",
   },
-  stretchContent: {
+  stretchJustifyContent: {
     justifyContent: "stretch",
   },
+
   // align-items
-  centerItems: {
+  autoAlignItems: {
+    alignItems: "auto",
+  },
+  centerAlignItems: {
     alignItems: "center",
   },
-  startItems: {
+  startAlignItems: {
     alignItems: "flex-start",
   },
-  endItems: {
+  endAlignItems: {
     alignItems: "flex-end",
   },
-  stretchItems: {
+  stretchAlignItems: {
     alignItems: "stretch",
   },
-  spaceBetweenItems: {
-    alignItems: "space-between",
+  baselineAlignItems: {
+    alignItems: "baseline",
   },
-  spaceAroundItems: {
-    alignItems: "space-around",
+
+  // align-self
+  autoAlignSelf: {
+    alignSelf: "auto",
   },
-  spaceEvenlyItems: {
-    alignItems: "space-evenly",
+  startAlignSelf: {
+    alignSelf: "flex-start",
+  },
+  endAlignSelf: {
+    alignSelf: "flex-end",
+  },
+  centerAlignSelf: {
+    alignSelf: "center",
+  },
+  stretchAlignSelf: {
+    alignSelf: "stretch",
+  },
+  baselineAlignSelf: {
+    alignSelf: "baseline",
+  },
+
+  // align-content
+  centerAlignContent: {
+    alignContent: "center",
+  },
+  startAlignContent: {
+    alignContent: "flex-start",
+  },
+  endAlignContent: {
+    alignContent: "flex-end",
+  },
+  stretchAlignContent: {
+    alignContent: "stretch",
+  },
+  spaceBetweenAlignContent: {
+    alignContent: "space-between",
+  },
+  spaceAroundAlignContent: {
+    alignContent: "space-around",
+  },
+  spaceEvenlyAlignContent: {
+    alignContent: "space-evenly",
   },
 
   // wrap
@@ -61,6 +109,48 @@ const useFlexBoxClasses = makeStyles({
   },
   nowrap: {
     flexWrap: "nowrap",
+  },
+  wrapReverse: {
+    flexWrap: "wrap-reverse",
+  },
+
+  // grow
+  growOne: {
+    flexGrow: 1,
+  },
+  growZero: {
+    flexGrow: 0,
+  },
+
+  // shrink
+  shrinkOne: {
+    flexShrink: 1,
+  },
+  shrinkZero: {
+    flexShrink: 0,
+  },
+
+  // basis
+  autoBasis: {
+    flexBasis: "auto",
+  },
+  "0Basis": {
+    flexBasis: 0,
+  },
+  fillBasis: {
+    flexBasis: "fill",
+  },
+  maxContentBasis: {
+    flexBasis: "max-content",
+  },
+  minContentBasis: {
+    flexBasis: "min-content",
+  },
+  fitContentBasis: {
+    flexBasis: "fit-content",
+  },
+  contentBasis: {
+    flexBasis: "content",
   },
 });
 
