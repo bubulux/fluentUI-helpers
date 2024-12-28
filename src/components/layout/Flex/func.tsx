@@ -90,7 +90,19 @@ type TProps = {
  *
  *
  * @default
- * direction = "row", justifyContent = "start", alignItems = "start", wrap = false, gap = "None", margin = ["None"], padding = ["None"], shHeight = "auto", shWidth = "auto"
+ * direction = "row",
+ * justifyContent = "start",
+ * alignItems = "start",
+ * alignContent = "start",
+ * alignSelf = "start",
+ * grow = false,
+ * noShrink = false,
+ * wrap = false,
+ * gap = "None",
+ * margin = ["None"],
+ * padding = ["None"],
+ * shHeight = "auto",
+ * shWidth = "auto"
  */
 export default function Flex({
   direction = "row",
