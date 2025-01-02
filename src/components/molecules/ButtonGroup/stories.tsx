@@ -15,7 +15,7 @@ export default meta;
 
 type Story = StoryObj<typeof ButtonGroup>;
 
-export const Index: Story = {
+export const ImperativeConfig: Story = {
   render: () => {
     const [activeOption, setActiveOption] = useState(1);
 
@@ -23,7 +23,6 @@ export const Index: Story = {
       <ButtonGroup>
         <Button
           appearance={activeOption === 1 ? "primary" : "secondary"}
-          shape="circular"
           onClick={() => {
             setActiveOption(1);
           }}
@@ -46,8 +45,21 @@ export const Index: Story = {
         >
           Button 3
         </Button>
-        <Button icon={<CalendarMonthRegular />} />
-        <Button shape="circular">Button 4 </Button>
+        <Button
+          icon={<CalendarMonthRegular />}
+          appearance={activeOption === 4 ? "primary" : "secondary"}
+          onClick={() => {
+            setActiveOption(4);
+          }}
+        />
+        <Button
+          appearance={activeOption === 5 ? "primary" : "secondary"}
+          onClick={() => {
+            setActiveOption(5);
+          }}
+        >
+          Button 5
+        </Button>
       </ButtonGroup>
     );
   },
