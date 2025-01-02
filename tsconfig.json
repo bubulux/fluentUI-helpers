@@ -24,6 +24,8 @@
     // Aliases
     "baseUrl": ".",
     "paths": {
+      "@preview*": ["src/preview/*"],
+      "@preview": ["src/preview/index.ts"],
       "@components/*": ["src/components/*"],
       "@components": ["src/components/index.ts"],
       "@hooks/*": ["src/hooks/*"],
