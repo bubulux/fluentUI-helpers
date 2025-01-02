@@ -1,5 +1,5 @@
 /* eslint-disable react/button-has-type */
-import { useModalContext } from "src/lib";
+import { useModalContext } from "@preview/elevated-modal";
 import ExampleModal from "@preview/elevated-modal/example/example";
 
 export default function App() {

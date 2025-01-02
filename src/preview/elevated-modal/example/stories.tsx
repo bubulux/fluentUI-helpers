@@ -5,6 +5,16 @@ const meta: Meta = {
   title: "Preview/Elevated Modal",
   component: Root,
   args: {},
+  parameters: {
+    layout: "fullscreen",
+  },
+  decorators: [
+    (Story) => (
+      <div style={{ width: "100%", height: "500px", backgroundColor: "grey" }}>
+        <Story />
+      </div>
+    ),
+  ],
 };
 
 export default meta;
