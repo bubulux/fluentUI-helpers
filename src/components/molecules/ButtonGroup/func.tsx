@@ -4,17 +4,15 @@ import useButtonGroupClasses from "./styles";
 
 import { Flex } from "@components/layout";
 
-import { Button } from "@fluentui/react-components";
+type TProps = {
+  children: JSX.Element[];
+};
 
-type TProps = {};
-
-export default function ButtonGroup({}: TProps): JSX.Element {
+export default function ButtonGroup({ children }: TProps): JSX.Element {
   const classes = useButtonGroupClasses();
   return (
     <Flex className={classes.root} shWidth="fitContent">
-      <Button>Lorem</Button>
-      <Button>Doloruem</Button>
-      <Button appearance="primary">Quam</Button>
+      {children}
     </Flex>
   );
 }

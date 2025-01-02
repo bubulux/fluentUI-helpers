@@ -8,6 +8,8 @@ const useButtonGroupClasses = makeStyles({
     },
     "& > *:not(:first-child):not(:last-child)": {
       borderRadius: 0,
+      borderLeft: "none",
+      borderRight: "none",
     },
     "& > *:last-child": {
       borderTopLeftRadius: 0,
