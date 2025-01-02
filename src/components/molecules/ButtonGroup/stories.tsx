@@ -42,6 +42,7 @@ export const ImperativeConfig: Story = {
           onClick={() => {
             setActiveOption(3);
           }}
+          disabledFocusable
         >
           Button 3
         </Button>

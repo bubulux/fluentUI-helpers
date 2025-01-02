@@ -1,8 +1,28 @@
 import type { JSX } from "react";
 
-import useButtonGroupClasses from "./styles";
+import type { ButtonProps } from "@fluentui/react-components";
+import type { FluentIcon } from "@fluentui/react-icons";
 
 import { Flex } from "@components/layout";
+
+import useButtonGroupClasses from "@components/molecules/ButtonGroup/styles";
+
+type TPropsBase = {
+  ariaLabel?: string;
+};
+
+type TPropsGlobalButtonConfig = {
+  size?: ButtonProps["size"];
+  shape?: ButtonProps["shape"];
+};
+
+type TLocalButtonConfig = {
+  text: string;
+  value?: string;
+  icon?: FluentIcon | JSX.Element;
+  iconPosition?: ButtonProps["iconPosition"];
+  onClick: (value: string) => void;
+};
 
 type TProps = {
   children: JSX.Element[];
