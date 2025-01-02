@@ -11,7 +11,7 @@ type TProps = {};
 export default function ButtonGroup({}: TProps): JSX.Element {
   const classes = useButtonGroupClasses();
   return (
-    <Flex className={classes.root}>
+    <Flex className={classes.root} shWidth="fitContent">
       <Button>Lorem</Button>
       <Button>Doloruem</Button>
       <Button appearance="primary">Quam</Button>

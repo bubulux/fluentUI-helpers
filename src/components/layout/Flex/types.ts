@@ -31,7 +31,14 @@ export type TFlexBasis =
   | "fitContent"
   | "content"
   | "0";
-export type TFlexShorthandDimensions = "25%" | "50%" | "75%" | "100%" | "auto";
+
+export type TFlexShorthandDimensions =
+  | "25%"
+  | "50%"
+  | "75%"
+  | "100%"
+  | "auto"
+  | "fitContent";
 
 export type TFlexPosition =
   | "-moz-initial"
