@@ -359,10 +359,10 @@ describe("Flex", () => {
         const FlexElement = screen.getByText("FlexChild");
         expect(FlexElement).toHaveStyle("height: 75%");
       });
-      it("should render with height auto", () => {
-        render(<Flex shHeight="auto">FlexChild</Flex>);
+      it("should render with height fitContent", () => {
+        render(<Flex shHeight="fitContent">FlexChild</Flex>);
         const FlexElement = screen.getByText("FlexChild");
-        expect(FlexElement).toHaveStyle("height: auto");
+        expect(FlexElement).toHaveStyle("height: fit-content");
       });
     });
     describe("for shWidth", () => {
@@ -386,10 +386,10 @@ describe("Flex", () => {
         const FlexElement = screen.getByText("FlexChild");
         expect(FlexElement).toHaveStyle("width: 75%");
       });
-      it("should render with width auto", () => {
-        render(<Flex shWidth="auto">FlexChild</Flex>);
+      it("should render with width fitContent", () => {
+        render(<Flex shWidth="fitContent">FlexChild</Flex>);
         const FlexElement = screen.getByText("FlexChild");
-        expect(FlexElement).toHaveStyle("width: auto");
+        expect(FlexElement).toHaveStyle("width: fit-content");
       });
     });
     describe("for className", () => {
