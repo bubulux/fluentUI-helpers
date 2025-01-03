@@ -9,7 +9,7 @@ import {
   Button,
 } from "@fluentui/react-components";
 
-import StrippedDialogSurface from "@previewelevated-modal/StrippedDialogSurface";
+import StrippedDialogSurface from "@preview/elevated-modal/StrippedDialogSurface";
 
 type TProps = {
   someString: string;

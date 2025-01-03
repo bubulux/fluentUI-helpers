@@ -1,18 +1,17 @@
 import type { JSX } from "react";
 
 import { mergeClasses } from "@fluentui/react-components";
-import { Fade } from "@fluentui/react-motion-components-preview";
 
 import { Flex } from "@components/layout";
 
-import useStrippedDialogSurfaceClasses from "./styles";
+import useStrippedDialogSurfaceClasses from "@previewelevated-modal/StrippedDialogSurface/styles";
 
 type TProps = {
   enhancementOptions?: {
     rootSurfaceStyles?: boolean;
     defaultDimensions?: boolean;
-    parentCenteringContainer?: boolean;
-    fadeInFadeOutEffect?: boolean;
+    parentCentering?: boolean;
+    parentDimming?: boolean;
   };
   children: JSX.Element;
   className?: string;
@@ -22,8 +21,8 @@ export default function StrippedDialogSurface({
   enhancementOptions = {
     rootSurfaceStyles: true,
     defaultDimensions: true,
-    parentCenteringContainer: true,
-    fadeInFadeOutEffect: true,
+    parentCentering: true,
+    parentDimming: true,
   },
   children,
   className = undefined,
@@ -45,20 +44,18 @@ export default function StrippedDialogSurface({
       {children}
     </div>
   );
-  return enhancementOptions.parentCenteringContainer ? (
-    <Fade visible={true}>
-      <div style={{ height: "100%", width: "100%" }}>
-        <Flex
-          className={classes.centerRoot}
-          justifyContent="center"
-          alignItems="center"
-          shHeight="100%"
-          shWidth="100%"
-        >
-          {bareSurface}
-        </Flex>
-      </div>
-    </Fade>
+  return enhancementOptions.parentCentering ? (
+    <Flex
+      className={
+        enhancementOptions.parentDimming ? classes.centerRoot : undefined
+      }
+      justifyContent="center"
+      alignItems="center"
+      shHeight="100%"
+      shWidth="100%"
+    >
+      {bareSurface}
+    </Flex>
   ) : (
     bareSurface
   );
