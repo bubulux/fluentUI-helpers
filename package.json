@@ -1,6 +1,6 @@
 {
   "name": "fluentui-helpers",
-  "version": "0.3.2",
+  "version": "0.3.0",
   "description": "Helper library for microsofts fluentui react library",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
