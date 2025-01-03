@@ -22,6 +22,10 @@ type TProps = {
  * - use appearance="primary" for the currently active button and the rest to default "outline"
  * - probably use it in a XOR fashion, so that only one button is active at a time
  *
+ * @accessibility
+ * - in general should not be used for 100% accesibility proof interactions
+ * - as its not very clear how to indicate the current state to screen readers, because the buttons dont have an active state
+ *
  * @props
  * - `children`: expects the Button component, at least two
  * - `ariaLabel`: optional, used for accessibility
