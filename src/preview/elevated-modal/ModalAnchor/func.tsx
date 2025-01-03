@@ -3,7 +3,7 @@ import "./anchor.css";
 import {
   TrappedBranch,
   UntrappedBranch,
-} from "@previewelevated-modal/Anchor/branches";
+} from "@previewelevated-modal/ModalAnchor/branches";
 
 type TProps = {
   disableTrapping?: boolean;
