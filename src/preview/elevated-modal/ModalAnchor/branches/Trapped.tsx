@@ -1,3 +1,5 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable consistent-return */
 import { useEffect, useRef } from "react";
 import { useModalContext } from "@preview/elevated-modal/provider";
 import constants from "@preview/elevated-modal/constants";
@@ -23,11 +25,9 @@ export default function Trapped() {
           lastElement.focus();
           e.preventDefault();
         }
-      } else {
-        if (document.activeElement === lastElement) {
-          firstElement.focus();
-          e.preventDefault();
-        }
+      } else if (document.activeElement === lastElement) {
+        firstElement.focus();
+        e.preventDefault();
       }
     };
 
