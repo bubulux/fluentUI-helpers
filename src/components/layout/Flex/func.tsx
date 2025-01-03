@@ -28,6 +28,7 @@ import type {
 
 type TProps = {
   children: ReactNode;
+  role?: string;
   position?: TFlexPosition;
   direction?: TFlexDirection;
   justifyContent?: TFlexOptionContent;
@@ -124,6 +125,7 @@ export default function Flex({
   className = undefined,
   testId = undefined,
   children,
+  role = undefined,
   ...rest
 }: TProps) {
   const flexBoxClass = useFlexBox(
@@ -149,6 +151,7 @@ export default function Flex({
       // eslint-disable-next-line react/jsx-props-no-spreading
       {...ariaProps}
       data-testid={testId}
+      role={role}
       className={mergeClasses(
         positionClass,
         flexBoxClass,

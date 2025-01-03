@@ -29,3 +29,11 @@ endef
 define echo_purple
     echo -e ${PURPLE}$1${NC}
 endef
+
+git-sync-prod:
+	@echo "Syncing with prod branch"
+	git fetch origin production:production
+
+git-sync-dev:
+	@echo "Syncing with dev branch"
+	git fetch origin development:development
