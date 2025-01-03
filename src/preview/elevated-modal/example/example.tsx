@@ -1,4 +1,16 @@
 /* eslint-disable react/button-has-type */
+
+import {
+  DialogTrigger,
+  DialogTitle,
+  DialogBody,
+  DialogActions,
+  DialogContent,
+  Button,
+} from "@fluentui/react-components";
+
+import StrippedDialogSurface from "@previewelevated-modal/StrippedDialogSurface";
+
 type TProps = {
   someString: string;
   someNumber: number;
@@ -15,24 +27,25 @@ export default function ExampleModal({
   onAbort,
 }: TProps) {
   return (
-    <div
-      style={{
-        backgroundColor: "rgba(0, 0, 0, 0.5)",
-        width: "100%",
-        height: "100%",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <div style={{ backgroundColor: "white", padding: "1rem" }}>
-        <h3>Modal Header with {someString}</h3>
-        <p>
-          Modal Content this number: {someNumber} and this key{" "}
-          {someObject.someKey}
-        </p>
-        <button onClick={onAbort}>Close Modal</button>
-      </div>
-    </div>
+    <StrippedDialogSurface>
+      <DialogBody>
+        <DialogTitle>Dialog title -- {someString}</DialogTitle>
+        <DialogContent>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
+          exercitationem cumque repellendus eaque est dolor eius expedita nulla
+          ullam? Tenetur reprehenderit aut voluptatum impedit voluptates in
+          natus iure cumque eaque? Some number: {someNumber} and some object
+          key: {someObject.someKey}
+        </DialogContent>
+        <DialogActions>
+          <DialogTrigger disableButtonEnhancement>
+            <Button appearance="secondary" onClick={onAbort}>
+              Close
+            </Button>
+          </DialogTrigger>
+          <Button appearance="primary">Do Something</Button>
+        </DialogActions>
+      </DialogBody>
+    </StrippedDialogSurface>
   );
 }

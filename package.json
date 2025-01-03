@@ -13,6 +13,7 @@
   "peerDependencies": {
     "@fluentui/react-components": "^9",
     "@fluentui/react-icons": "^2",
+    "@fluentui/react-motion-components-preview": "^0.4.1",
     "@griffel/react": "^1.5",
     "react": "^18 || ^17",
     "react-dom": "^18 || ^17"
@@ -22,6 +23,7 @@
     "@babel/preset-typescript": "^7.25.9",
     "@fluentui/react-components": "^9.55.0",
     "@fluentui/react-icons": "^2.0.261",
+    "@fluentui/react-motion-components-preview": "^0.4.1",
     "@griffel/react": "^1.5.25",
     "@griffel/tag-processor": "^1.0.7",
     "@griffel/vite-plugin": "^0.1.7",
