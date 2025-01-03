@@ -13,6 +13,17 @@ const useElevatedModalClasses = makeStyles({
     maxWidth: "600px",
     height: "fit-content",
   },
+  centerRoot: {
+    // fade in animation for the modal
+    backgroundColor: "rgba(0, 0, 0, 0.4)",
+    // animationName: {
+    //   to: {
+    //     backgroundColor: "rgba(0, 0, 0, 0.4)",
+    //   },
+    // },
+    // animationDuration: "0.5s",
+    // animationFillMode: "forwards",
+  },
 });
 
 export default useElevatedModalClasses;

@@ -46,14 +46,19 @@ export default function StrippedDialogSurface({
     </div>
   );
   return enhancementOptions.parentCenteringContainer ? (
-    <Flex
-      justifyContent="center"
-      alignItems="center"
-      shHeight="100%"
-      shWidth="100%"
-    >
-      {bareSurface}
-    </Flex>
+    <Fade visible={true}>
+      <div style={{ height: "100%", width: "100%" }}>
+        <Flex
+          className={classes.centerRoot}
+          justifyContent="center"
+          alignItems="center"
+          shHeight="100%"
+          shWidth="100%"
+        >
+          {bareSurface}
+        </Flex>
+      </div>
+    </Fade>
   ) : (
     bareSurface
   );
