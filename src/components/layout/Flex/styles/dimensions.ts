@@ -4,6 +4,9 @@ const useDimensionClasses = makeStyles({
   autoWidth: {
     width: "auto",
   },
+  fitContentWidth: {
+    width: "fit-content",
+  },
   "25%Width": {
     width: "25%",
   },
@@ -17,6 +20,9 @@ const useDimensionClasses = makeStyles({
     width: "100%",
   },
 
+  fitContentHeight: {
+    height: "fit-content",
+  },
   autoHeight: {
     height: "auto",
   },

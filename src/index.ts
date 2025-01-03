@@ -1,3 +1,3 @@
-export { EThemeSpacing, EThemeIconSizes, EThemeDimensions } from "@theme/index";
-export { useFuiProviderNode } from "@hooks/index";
-export { Flex } from "@components/index";
+export { EThemeSpacing, EThemeIconSizes, EThemeDimensions } from "@theme";
+export { useFuiProviderNode } from "@hooks";
+export { Flex, ButtonGroup } from "@components";
