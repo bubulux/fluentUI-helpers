@@ -1,6 +1,6 @@
 /* eslint-disable react/button-has-type */
 import { useModalContext } from "@preview/elevated-modal";
-import ExampleModal from "@preview/elevated-modal/example/example";
+import ExampleModal from "@previewelevated-modal/stories/example";
 
 export default function App() {
   const { setIsActivated, setModal } = useModalContext();

@@ -1,5 +1,5 @@
 import { ModalContextProvider, ModalAnchor } from "@preview/elevated-modal";
-import App from "@preview/elevated-modal/example";
+import App from "@previewelevated-modal/stories";
 
 export default function Root() {
   return (

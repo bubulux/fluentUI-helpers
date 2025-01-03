@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import Root from "@preview/elevated-modal/example/root";
+import Root from "@previewelevated-modal/stories/root";
 
 const meta: Meta = {
   title: "Preview/Elevated Modal",
